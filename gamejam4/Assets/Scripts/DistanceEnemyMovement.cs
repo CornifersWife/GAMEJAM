@@ -44,7 +44,6 @@ public class DistanceEnemyMovement : MonoBehaviour
     void Update()
     {
         _inRange = _rangeScript.InRange();
-        Debug.Log(_inRange);
         
         if (target != null)
         {
