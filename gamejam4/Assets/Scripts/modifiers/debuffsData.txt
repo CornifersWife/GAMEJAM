@@ -1,0 +1,6 @@
+{"id":1,"name":"movement speed decrease","timeDuration":10.0,"speedMovementMod":0.8,"speedAttackMod":1.0,"damageMod":1.0,"HPMod":1.0,"armorMod":1.0,"dodgeMod":1.0}
+{"id":2,"name":"attack speed decrease","timeDuration":10.0,"speedMovementMod":1.0,"speedAttackMod":0.8,"damageMod":1.0,"HPMod":1.0,"armorMod":1.0,"dodgeMod":1.0}
+{"id":3,"name":"damage decrease","timeDuration":10.0,"speedMovementMod":1.0,"speedAttackMod":1.0,"damageMod":0.5,"HPMod":1.0,"armorMod":1.0,"dodgeMod":1.0}
+{"id":4,"name":"HP decrease","timeDuration":60.0,"speedMovementMod":1.0,"speedAttackMod":1.0,"damageMod":1.0,"HPMod":0.7,"armorMod":1.0,"dodgeMod":1.0}
+{"id":5,"name":"armor decrease","timeDuration":10.0,"speedMovementMod":1.0,"speedAttackMod":1.0,"damageMod":1.0,"HPMod":1.0,"armorMod":0.5,"dodgeMod":1.0}
+{"id":6,"name":"dodge decrease","timeDuration":10.0,"speedMovementMod":1.0,"speedAttackMod":1.0,"damageMod":1.0,"HPMod":1.0,"armorMod":1.0,"dodgeMod":0.5}
