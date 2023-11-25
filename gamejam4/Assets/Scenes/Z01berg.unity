@@ -143,27 +143,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 628878714}
-  - component: {fileID: 628878713}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: try?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &628878713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628878712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a42febd3c84309a306f3f1cea294aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
 --- !u!4 &628878714
 Transform:
   m_ObjectHideFlags: 0
@@ -176,7 +162,8 @@ Transform:
   m_LocalPosition: {x: -1.4183589, y: -1.6347886, z: -0.3894329}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1587498364}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &782010271 stripped
@@ -390,6 +377,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f5c3baac3bc8bc43b9391769a35fe0a, type: 3}
+--- !u!1 &1359694462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359694464}
+  - component: {fileID: 1359694463}
+  m_Layer: 0
+  m_Name: 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1359694463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359694462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a42febd3c84309a306f3f1cea294aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 1587498363}
+--- !u!4 &1359694464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359694462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.77733153, y: -1.2521237, z: -0.30112794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1587498362
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +433,7 @@ GameObject:
   - component: {fileID: 1587498364}
   - component: {fileID: 1587498363}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Weapon test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,11 +451,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b0fe6b632dde64abcc68b24d6fd8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: LOL
-  speed: 20
+  weaponName: 6
+  speed: 60
   cooldown: 10
-  range: 10
-  damage: 2
+  range: 70
+  damage: 10
+  WeaponManager: {fileID: 1359694463}
 --- !u!4 &1587498364
 Transform:
   m_ObjectHideFlags: 0
@@ -432,12 +465,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587498362}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4183589, y: -1.6347886, z: -0.3894329}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 628878714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1629366009
 PrefabInstance:
@@ -69998,6 +70031,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193435679978138393, guid: 10e55e5bbaf973d4a8d8d8eb16bc57de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.035116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193435679978138393, guid: 10e55e5bbaf973d4a8d8d8eb16bc57de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.654419
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70013,5 +70054,5 @@ SceneRoots:
   - {fileID: 5292091466011860660}
   - {fileID: 956529276}
   - {fileID: 1984445104}
-  - {fileID: 1587498364}
   - {fileID: 628878714}
+  - {fileID: 1359694464}
