@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &189566291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4580293805219955301, guid: 6122868957134ba4fac705a5ca3fc8de, type: 3}
+  m_PrefabInstance: {fileID: 603678342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &204565089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364,6 +369,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 321040402}
+    - target: {fileID: 7328479145690223974, guid: 6122868957134ba4fac705a5ca3fc8de, type: 3}
+      propertyPath: _projectileSpawn
+      value: 
+      objectReference: {fileID: 189566291}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
