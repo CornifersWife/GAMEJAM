@@ -28,9 +28,8 @@ public class enemy_spawn : MonoBehaviour {
             var randDelay = UnityEngine.Random.Range(0f, spawn_delay_random_max);
             yield return new WaitForSeconds(min_spawn_delay + randDelay);
             if (spawn) {
-                float num = UnityEngine.Random.Range(0, 1) * 2;
-                
-                Instantiate(enemies[1], transform.position, transform.rotation);
+                float num = UnityEngine.Random.Range(0f, 2f);
+                Instantiate(enemies[(int)num], transform.position, transform.rotation);
                 i++;
             }
         }

@@ -37,11 +37,8 @@ public class DistanceEnemyMovement : MonoBehaviour
         {
             if (!_inRange)
             {
-                _enemyAnimations.Walk();
-                // Calculate the direction to move towards the target
-                
-                _rb.velocity = direction * moveSpeed;
-                //_rb.transform.Translate(e);
+                _enemyAnimations.Walk();    
+                _rb.velocity = direction * moveSpeed; 
             }
             else
             {
