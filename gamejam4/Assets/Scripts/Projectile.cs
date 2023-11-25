@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        var player = GameObject.Find("Player_movement");
     }
 
     private void Start()
@@ -29,5 +28,15 @@ public class Projectile : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            var dm = collision.GetComponent<HPsystem>();
+            dm.SetHealth(_damage);
+        }
     }
 }
