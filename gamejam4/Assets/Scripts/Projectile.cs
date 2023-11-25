@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-            var dm = collision.GetComponent<HPsystem>();
+            var dm = collision.GetComponentInParent<HPsystem>();
             dm.SetHealth(_damage);
         }
     }
