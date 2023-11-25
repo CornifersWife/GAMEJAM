@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         _player = GameObject.Find("Player_movement");
-        _rb.velocity = new Vector3(_player.transform.position.x, _player.transform.position.y, _player.transform.position.z) * _speed;
+        _rb.velocity = (_player.transform.position - transform.position).normalized * _speed;
     }
 
     private void OnBecameInvisible()
