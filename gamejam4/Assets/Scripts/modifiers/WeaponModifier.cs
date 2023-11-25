@@ -14,10 +14,10 @@ public class WeaponModifierData
 
 public class WeaponModifier : MonoBehaviour
 {
-    [SerializeField] private float speedMod;
-    [SerializeField] private float cooldownMod;
-    [SerializeField] private float rangeMod;
-    [SerializeField] private float damageMod;
+    [SerializeField] internal float speedMod;
+    [SerializeField] internal float cooldownMod;
+    [SerializeField] internal float rangeMod;
+    [SerializeField] internal float damageMod;
 
     // Start is called before the first frame update
     void Start()
