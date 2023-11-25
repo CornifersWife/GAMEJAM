@@ -1,6 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class PlayerStatModifierData
+{
+    public float timeDuration;
+    public float speedMovementMod;
+    public float speedAttackMod;
+    public float damageMod;
+    public float HPMod;
+    public float armorMod;
+    public float dodgeMod;
+}
 
 public class PlayerStatModifier : MonoBehaviour
 {

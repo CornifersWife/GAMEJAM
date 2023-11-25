@@ -6,10 +6,10 @@ using UnityEngine;
 [Serializable]
 public class WeaponModifierData
 {
-    private float speedMod;
-    private float cooldownMod;
-    private float rangeMod;
-    private float damageMod;
+    public float speedMod;
+    public float cooldownMod;
+    public float rangeMod;
+    public float damageMod;
 }
 
 public class WeaponModifier : MonoBehaviour
