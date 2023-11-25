@@ -25,6 +25,10 @@ public class PauseMenu : MonoBehaviour
         {
             PauseGame();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameOver();
+        }
     }
 
     public void PauseGame()
