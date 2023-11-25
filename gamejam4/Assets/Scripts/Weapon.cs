@@ -30,8 +30,6 @@ enum Damage
     Big = 10
 }
 
-// storing presets - where?
-
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private Speed speed;
