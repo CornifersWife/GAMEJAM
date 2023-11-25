@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
+    // Views list
     [SerializeField] private GameObject _pauseView;
     [SerializeField] private GameObject _gameOverView;
+    [SerializeField] private GameObject _cookingView;
+
+    //objects
+    [SerializeField] private GameObject _healthBar;
 
     private bool _gamePaused = false;
     private bool _gameOver = false;
@@ -16,6 +20,8 @@ public class PauseMenu : MonoBehaviour
     {
         _gameOverView.SetActive(false);
         _pauseView.SetActive(false);
+        _cookingView.SetActive(false);
+        _healthBar.SetActive(true);
     }
 
     private void Update()
@@ -31,7 +37,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void PauseGame()
+    public void PauseGame() // pausing game
     {
         if(_gamePaused)
         {
@@ -47,29 +53,44 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void RestartLevel()
+    public void RestartLevel() // restarts level
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void LoadMenu()
+    public void LoadMenu() // exits to menu
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
-    public void QuitGame()
+    public void QuitGame() // quits game
     {
         Application.Quit();
     }
 
-    public void GameOver()
+    public void GameOver() // game end window
     {
         Time.timeScale = 0f;
         _gameOver = true;
         _gameOverView.SetActive(true);
         _pauseView.SetActive(false);
+    }
+
+    public void DisableHealthBar() // for hiding healthbar
+    {
+        _healthBar.SetActive(false);
+    }
+
+    public void StartCooking() // enter cooking view
+    {
+        _cookingView.SetActive(true);
+    }
+
+    public void StopCooking()
+    {
+        _cookingView.SetActive(false);
     }
 
 }
