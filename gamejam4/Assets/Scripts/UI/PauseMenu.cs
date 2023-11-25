@@ -85,7 +85,12 @@ public class PauseMenu : MonoBehaviour
 
     public void StartCooking() // enter cooking view
     {
+        _cookingView.SetActive(true);
+    }
 
+    public void StopCooking()
+    {
+        _cookingView.SetActive(false);
     }
 
 }
