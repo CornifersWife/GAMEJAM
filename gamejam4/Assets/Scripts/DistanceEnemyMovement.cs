@@ -20,25 +20,37 @@ public class DistanceEnemyMovement : MonoBehaviour
 
     private bool _inRange = false;
 
+    private GameObject _trash;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _enemyAnimations = GetComponent<EnemyAnimations>();
         _rangeScript = GetComponent<Enemy2Range>();
         _proScript = GetComponent<ShootProjectile>();
+
+        if (GameObject.Find("Trash"))
+        {
+            _trash = GameObject.Find("Trash");
+        }
+        else
+        {
+            _trash = new GameObject("Trash");
+            Instantiate(_trash);
+        }
     }
 
     void Update()
     {
         _inRange = _rangeScript.InRange();
-        Vector2 direction = (target.position - transform.position).normalized;
+        
         if (target != null)
         {
             if (!_inRange)
             {
                 _enemyAnimations.Walk();
                 // Calculate the direction to move towards the target
-                
+                Vector2 direction = (target.position - transform.position).normalized;
                 _rb.velocity = direction * moveSpeed;
                 //_rb.transform.Translate(e);
             }
@@ -66,7 +78,7 @@ public class DistanceEnemyMovement : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(_projectilePrefab, transform.position, transform.rotation);
+        Instantiate(_projectilePrefab, transform.position, transform.rotation,_trash.transform);
     }
 
     
