@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2912072665887506655}
   - component: {fileID: 2854543576873970157}
   - component: {fileID: 3560329842472907946}
-  - component: {fileID: 922745341199658089}
+  - component: {fileID: 2798641549331499604}
   m_Layer: 0
   m_Name: enemyy
   m_TagString: Untagged
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   moveSpeed: 5
---- !u!95 &922745341199658089
+--- !u!95 &2798641549331499604
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
