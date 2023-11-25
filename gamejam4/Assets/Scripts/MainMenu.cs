@@ -34,4 +34,16 @@ public class MainMenu : MonoBehaviour
         _levelSelectionView.SetActive(false);
         _settingsView.SetActive(false);
     }
+
+    public void OpenSettings()
+    {
+        _mainView.SetActive(false);
+        _levelSelectionView.SetActive(false);
+        _settingsView.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
