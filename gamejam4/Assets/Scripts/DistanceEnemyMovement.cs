@@ -8,6 +8,7 @@ public class DistanceEnemyMovement : MonoBehaviour
     [SerializeField] private Transform target;  // The target object to chase
     [SerializeField] private float moveSpeed = 5f;  // The speed at which the object will move
     [SerializeField] private float cooldown = 8f;
+    [SerializeField] private float damage = 10;
     private Rigidbody2D _rb;
 
     private EnemyAnimations _enemyAnimations; // animations controller script
@@ -43,6 +44,7 @@ public class DistanceEnemyMovement : MonoBehaviour
     void Update()
     {
         _inRange = _rangeScript.InRange();
+        Debug.Log(_inRange);
         
         if (target != null)
         {
@@ -70,7 +72,6 @@ public class DistanceEnemyMovement : MonoBehaviour
             if (_inRange)
             {
                 _enemyAnimations.Attack();
-                
             }
         }
         
@@ -78,7 +79,8 @@ public class DistanceEnemyMovement : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(_projectilePrefab, transform.position, transform.rotation,_trash.transform);
+        var obj = Instantiate(_projectilePrefab, transform.position, transform.rotation,_trash.transform);
+        obj.GetComponent<Projectile>().SetDamage(damage);
     }
 
     
