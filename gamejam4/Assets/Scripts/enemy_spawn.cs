@@ -19,11 +19,12 @@ public class enemy_spawn : MonoBehaviour {
     }
 
     public void Start_spawning(int amount) {
+        Debug.Log("1");
         StartCoroutine(Spawn_enemy_Coroutine(amount));
     }
 
     IEnumerator Spawn_enemy_Coroutine(int amount) {
-        
+        Debug.Log("2");
         spawn = true;
         for (var i = 0; i < amount;) {
             var randDelay = UnityEngine.Random.Range(0f, spawn_delay_random_max);
