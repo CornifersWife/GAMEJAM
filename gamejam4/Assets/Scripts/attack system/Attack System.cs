@@ -31,8 +31,8 @@ public class AttackSystem : MonoBehaviour
         if (AttackPointMid == null || AttackPointMelle == null || AttackPointRanged == null)
             return;
     
-        Gizmos.DrawWireSphere(AttackPointMid.position, AttakcRange);
-        Gizmos.DrawWireSphere(AttackPointMelle.position, AttakcRange * 1.5f);
-        Gizmos.DrawWireSphere(AttackPointRanged.position, AttakcRange);
+        Gizmos.DrawWireSphere(AttackPointMid.position, AttackRange);
+        Gizmos.DrawWireSphere(AttackPointMelle.position, AttackRange * 1.5f);
+        Gizmos.DrawWireSphere(AttackPointRanged.position, AttackRange);
     }
 }
