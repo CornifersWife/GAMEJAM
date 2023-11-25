@@ -1,23 +1,24 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Chaser : MonoBehaviour
 {
-    [SerializeField] private Transform target;  // The target object to chase
+    private GameObject target;  // The target object to chase
     [SerializeField] private float moveSpeed = 5f;  // The speed at which the object will move
     private Rigidbody2D _rb;
 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
+        target = GameObject.Find("Player_movement");
     }
 
     void Update()
     {
-        if (target != null)
-        {
+        if (target != null) {
             
             // Calculate the direction to move towards the target
-            Vector2 direction = (target.position - transform.position).normalized;
+            Vector2 direction = (target.transform.position - transform.position).normalized;
             _rb.velocity = direction * moveSpeed;
             //_rb.transform.Translate(e);
             
