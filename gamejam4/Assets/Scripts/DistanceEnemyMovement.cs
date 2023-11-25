@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DistanceEnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform target;  // The target object to chase
+    private GameObject target;  // The target object to chase
     [SerializeField] private float moveSpeed = 5f;  // The speed at which the object will move
     private Rigidbody2D _rb;
     private CircleCollider2D _range;
@@ -25,12 +25,14 @@ public class DistanceEnemyMovement : MonoBehaviour
         _rangeScript = GetComponent<Enemy2Range>();
         _range = GetComponent<CircleCollider2D>();
         _shootScript = GetComponent<ShootProjectile>();
+        target = GameObject.Find("Player_movement");
+        
     }
 
     void Update()
     {
         _inRange = _rangeScript.InRange();
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector2 direction = (target.transform.position - transform.position).normalized;
         if (target != null)
         {
             if (!_inRange)
