@@ -45,7 +45,6 @@ public class DistanceEnemyMovement : MonoBehaviour
             {
                 _rb.velocity = Vector2.zero;
                 _enemyAnimations.Attack();
-                _shootScript.Shoot(_projectilePrefab, direction);
             }
         }
 
