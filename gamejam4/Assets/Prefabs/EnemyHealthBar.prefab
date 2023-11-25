@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3414715379529611929}
   - component: {fileID: 8830012398633946290}
   - component: {fileID: 937801210133063216}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5114377031578502054}
   - component: {fileID: 8810229693446661960}
   - component: {fileID: 5393740727723010579}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 7239264863485218874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9971632, y: 1.9971632, z: 1.9971632}
+  m_LocalScale: {x: 3.4622822, y: 3.4622822, z: 3.4622822}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8480952857755561233}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8480952857755561233}
   - component: {fileID: 2479956179149173435}
   - component: {fileID: 739088939294249733}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
