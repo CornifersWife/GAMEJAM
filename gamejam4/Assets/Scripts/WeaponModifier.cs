@@ -1,6 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class WeaponModifierData
+{
+    private float speedMod;
+    private float cooldownMod;
+    private float rangeMod;
+    private float damageMod;
+}
 
 public class WeaponModifier : MonoBehaviour
 {
