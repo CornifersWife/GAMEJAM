@@ -1320,6 +1320,14 @@ PrefabInstance:
       propertyPath: m_text
       value: RETURN
       objectReference: {fileID: 0}
+    - target: {fileID: 3075215528255096427, guid: 6d64ec57b347aab44a096d2e035ce269, type: 3}
+      propertyPath: m_fontSize
+      value: 62.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075215528255096427, guid: 6d64ec57b347aab44a096d2e035ce269, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 62.91
+      objectReference: {fileID: 0}
     - target: {fileID: 6562903325477190037, guid: 6d64ec57b347aab44a096d2e035ce269, type: 3}
       propertyPath: m_Name
       value: BackButton
