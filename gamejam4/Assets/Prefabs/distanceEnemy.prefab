@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1921969392016419599}
   - component: {fileID: 7328479145690223974}
   - component: {fileID: 7402686848624762894}
+  - component: {fileID: 3062004528174887669}
   m_Layer: 0
   m_Name: distanceEnemy
   m_TagString: Untagged
@@ -252,7 +253,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   moveSpeed: 5
+  cooldown: 2
+  damage: 10
   _projectilePrefab: {fileID: 2242159022441772180, guid: e4ae8dda199bebd4b9359d2c664ba48b, type: 3}
+  _projectileSpawn: {fileID: 4580293805219955301}
 --- !u!114 &7402686848624762894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +269,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252b72a7659ef3c4696c90fe8370aa28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3062004528174887669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134937536750302098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a756be3a6f6604dbc281d0482a0591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &4580293805219955301
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,15 +355,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.97331744
+      value: 1.3948612
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.97331744
+      value: 1.3948612
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.97331744
+      value: 1.3948612
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -382,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.205
+      value: -0.524
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

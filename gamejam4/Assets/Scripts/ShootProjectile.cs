@@ -5,8 +5,8 @@ using UnityEngine;
 public class ShootProjectile : MonoBehaviour
 {
     [SerializeField] private float _damage = 5f;
-    public void Shoot(GameObject prefab, Transform dest)
+    public void Shoot()
     {
-        Instantiate(prefab, dest);
+        
     }
 }
