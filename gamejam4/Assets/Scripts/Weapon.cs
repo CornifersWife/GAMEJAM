@@ -1,55 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-enum Speed
+public enum Speed
 {
     Slow = 20,
     Medium = 40,
     Fast = 60
 }
 
-enum Cooldown
+public enum Cooldown
 {
     Small = 5,
     Medium = 10,
     Big = 20
 }
 
-enum Range
+public enum Range
 {
     Small = 10,
     Medium = 40,
     Big = 70
 }
 
-enum Damage
+public enum Damage
 {
     Small = 2,
     Medium = 5,
     Big = 10
 }
 
-// storing presets - where?
+[System.Serializable]
+public class WeaponData
+{
+    public string name;
+    public Speed speed;
+    public Cooldown cooldown;
+    public Range range;
+    public Damage damage;
+}
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private Speed speed;
-    [SerializeField] private Cooldown cooldown;
-    [SerializeField] private Range range;
-    [SerializeField] private Damage damage;
-    
-    
-    
-    // Start is called before the first frame update
+    [SerializeField] internal string weaponName;
+    [SerializeField] internal Speed speed;
+    [SerializeField] internal Cooldown cooldown;
+    [SerializeField] internal Range range;
+    [SerializeField] internal Damage damage;
+
     void Start()
     {
+        WeaponM weaponManager = GetComponent<WeaponM>();
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        weaponManager.SaveWeaponData("weaponData.txt");
         
+        weaponManager.LoadWeaponData("weaponData.txt");
     }
 }
+
