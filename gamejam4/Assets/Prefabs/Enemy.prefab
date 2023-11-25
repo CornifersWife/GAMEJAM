@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3618471703460420892}
   - component: {fileID: 6328835417695298699}
   m_Layer: 0
-  m_Name: EnemyHPTEST
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +108,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 805115271874391879}
     m_Modifications:
+    - target: {fileID: 182875303697052574, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -139,6 +143,18 @@ PrefabInstance:
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.4622822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.4622822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.4622822
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,6 +207,14 @@ PrefabInstance:
     - target: {fileID: 7239264863485218874, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_Name
       value: EnemyHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239264863485218874, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182517388692080974, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
