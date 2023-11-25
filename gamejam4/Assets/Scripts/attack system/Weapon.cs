@@ -49,13 +49,22 @@ public class Weapon : MonoBehaviour
     [SerializeField] internal Range range;
     [SerializeField] internal Damage damage;
 
+    [SerializeField] private WeaponManager WeaponManager;
+
     void Start()
     {
-        WeaponM weaponManager = GetComponent<WeaponM>();
-        
-        weaponManager.SaveWeaponData("weaponData.txt");
-        
-        weaponManager.LoadWeaponData("weaponData.txt");
+        WeaponManager = GameObject.Find("7").GetComponent<WeaponManager>();
+
+        if (WeaponManager != null)
+        {
+            WeaponManager.SaveWeaponData();
+            
+            WeaponManager.LoadWeaponData(1);
+        }
+        else
+        {
+            Debug.LogError("WeaponManageranager nie został znaleziony!");
+        }
     }
 }
 
