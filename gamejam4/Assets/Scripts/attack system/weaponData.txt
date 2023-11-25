@@ -1,0 +1,5 @@
+{"name":"LOL","speed":60,"cooldown":10,"range":70,"damage":10}
+{"name":"LOLll","speed":60,"cooldown":10,"range":70,"damage":10}
+{"name":"45","speed":60,"cooldown":10,"range":70,"damage":10}
+{"name":"6","speed":60,"cooldown":10,"range":70,"damage":10}
+{"name":"7","speed":60,"cooldown":10,"range":70,"damage":10}
