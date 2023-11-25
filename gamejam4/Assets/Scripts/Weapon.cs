@@ -2,12 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum Speed
+{
+    Slow = 20,
+    Medium = 40,
+    Fast = 60
+}
+
+enum Cooldown
+{
+    Small = 5,
+    Medium = 10,
+    Big = 20
+}
+
+enum Range
+{
+    Small = 10,
+    Medium = 40,
+    Big = 70
+}
+
+enum Damage
+{
+    Small = 2,
+    Medium = 5,
+    Big = 10
+}
+
+// storing presets - where?
+
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float cooldown;
-    [SerializeField] private float range;
-    [SerializeField] private float damage;
+    [SerializeField] private Speed speed;
+    [SerializeField] private Cooldown cooldown;
+    [SerializeField] private Range range;
+    [SerializeField] private Damage damage;
+    
+    
     
     // Start is called before the first frame update
     void Start()
