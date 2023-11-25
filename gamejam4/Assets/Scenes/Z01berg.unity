@@ -456,7 +456,7 @@ MonoBehaviour:
   cooldown: 10
   range: 70
   damage: 10
-  WeaponManager: {fileID: 0}
+  WeaponManager: {fileID: 1359694463}
 --- !u!4 &1587498364
 Transform:
   m_ObjectHideFlags: 0
