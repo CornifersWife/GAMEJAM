@@ -53,7 +53,7 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        WeaponManager = GameObject.Find("7").GetComponent<WeaponManager>();
+        WeaponManager = GameObject.Find("WeaponManager").GetComponent<WeaponManager>();
 
         if (WeaponManager != null)
         {
