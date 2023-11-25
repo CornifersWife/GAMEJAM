@@ -85,7 +85,13 @@ public class DistanceEnemyMovement : MonoBehaviour
         obj.GetComponent<Projectile>().SetDamage(damage);
     }
 
-    
-
+    private void OnCollisionEnter2D(Collision2D collision) // do damage on collision
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            //var dm = collision.collider.GetComponentInParent<HPsystem>();
+            //dm.SetHealth(damage/2);
+        }
+    }
 
 }
