@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03185b7ebed3b149a471b3991709757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  first_wave_time: 1
-  spawn_interval: 3
-  targetObject: {fileID: 5794528156345805993, guid: 349fbdbb38aa2b046bcb1b0c6a7baf38, type: 3}
+  first_wave_time: 5
+  spawn_interval: 13
+  prefab: {fileID: 5794528156345805993, guid: 349fbdbb38aa2b046bcb1b0c6a7baf38, type: 3}
+  instantiatedObjects: []
   enemies_to_spawn: 3
