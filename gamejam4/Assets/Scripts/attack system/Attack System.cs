@@ -13,11 +13,15 @@ public class AttackSystem : MonoBehaviour
     [SerializeField] private Transform AttackPointMid;
     [SerializeField] private Transform AttackPointMelle;
 
-    private float AttackRange;
+    private float AttackRangeS;
+    private float AttackRangeM;
+    private float AttackRangeB;
 
     void Start()
     {
-        
+        AttackRangeS = (float)Range.Small;
+        AttackRangeM = (float)Range.Medium;
+        AttackRangeB = (float)Range.Big;
     }
 
     
@@ -31,8 +35,8 @@ public class AttackSystem : MonoBehaviour
         if (AttackPointMid == null || AttackPointMelle == null || AttackPointRanged == null)
             return;
     
-        Gizmos.DrawWireSphere(AttackPointMid.position, AttackRange);
-        Gizmos.DrawWireSphere(AttackPointMelle.position, AttackRange * 1.5f);
-        Gizmos.DrawWireSphere(AttackPointRanged.position, AttackRange);
+        Gizmos.DrawWireSphere(AttackPointMid.position, AttackRangeM);
+        Gizmos.DrawWireSphere(AttackPointMelle.position, AttackRangeS);
+        Gizmos.DrawWireSphere(AttackPointRanged.position, AttackRangeB);
     }
 }
