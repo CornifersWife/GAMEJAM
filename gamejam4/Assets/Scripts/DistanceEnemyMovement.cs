@@ -32,24 +32,21 @@ public class DistanceEnemyMovement : MonoBehaviour
     void Update()
     {
         _inRange = _rangeScript.InRange();
-<<<<<<< Updated upstream
-        Vector2 direction = (target.transform.position - transform.position).normalized;
-=======
-        var position_delta = target.position - transform.position;
+
+        var position_delta = target.transform.position - transform.position;
         
->>>>>>> Stashed changes
         if (target != null)
         {
             if (!_inRange)
             {
-<<<<<<< Updated upstream
+
                 _enemyAnimations.Walk();    
-                _rb.velocity = direction * moveSpeed; 
-=======
-                _enemyAnimations.Walk();
-                Vector2 direction = (target.position - transform.position).normalized;
+
+
+
+                Vector2 direction = (target.transform.position - transform.position).normalized;
                 _rb.velocity = direction * moveSpeed;
->>>>>>> Stashed changes
+
             }
             else
             {
