@@ -7,18 +7,21 @@ public class PauseMenu : MonoBehaviour
 {
 
     [SerializeField] private GameObject _pauseView;
+    [SerializeField] private GameObject _gameOverView;
 
     private bool _gamePaused = false;
+    private bool _gameOver = false;
 
     private void Awake()
     {
+        _gameOverView.SetActive(false);
         _pauseView.SetActive(false);
     }
 
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !_gameOver)
         {
             PauseGame();
         }
@@ -55,6 +58,14 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        _gameOver = true;
+        _gameOverView.SetActive(true);
+        _pauseView.SetActive(false);
     }
 
 }
