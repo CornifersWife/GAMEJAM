@@ -34,5 +34,32 @@ public class Shop : MonoBehaviour
     [SerializeField] private TMP_Text _CritChancePrompt;
     [SerializeField] private TMP_Text _CritMultipPrompt;
 
+    // Modifiers
+    private PlayerStatModifier _modifiersScripts;
 
+    private void Awake()
+    {
+        var temp = GameObject.Find("Modifier");
+        _modifiersScripts = temp.GetComponent<PlayerStatModifier>();
+        SetCurrentStats();
+    }
+
+    void SetCurrentStats()
+    {
+        _HP = _modifiersScripts.HPMod;
+        _HPPrompt.text = _HP.ToString();
+
+        _Armor = _modifiersScripts.armorMod;
+        _ArmorPrompt.text = _Armor.ToString();
+
+        _Movement_Speed = _modifiersScripts.speedMovementMod;
+        _MovementSpeedPrompt.text = _Movement_Speed.ToString();
+
+        _DMG = _modifiersScripts.damageMod;
+        _DMGPrompt.text = _DMG.ToString();
+
+        _Attack_Speed = _modifiersScripts.speedAttackMod;
+        _AttackSpeedPrompt.text = _Attack_Speed.ToString();
+
+    }
 }
