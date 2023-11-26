@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     {
         _gameOverView.SetActive(false);
         _pauseView.SetActive(false);
-        _cookingView.SetActive(false);
+        //_cookingView.SetActive(false);
         _healthBar.SetActive(true);
     }
 
