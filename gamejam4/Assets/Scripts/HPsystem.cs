@@ -33,9 +33,17 @@ public class HPsystem : MonoBehaviour
 
     public void SetHealth(float damage)
     {
+<<<<<<< Updated upstream
+=======
+        //Debug.Log("asdd");
+>>>>>>> Stashed changes
         _bar.fillAmount -= damage/_maxHP;
     }
 
+    public void TakeDamage(float damage) {
+        Debug.Log(_currentHealth+"  -  "+damage);
+        _currentHealth -= damage;
+    }
     public void ResetHealth()
     {
         _bar.fillAmount = 1f;
