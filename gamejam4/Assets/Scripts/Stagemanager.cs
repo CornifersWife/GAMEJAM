@@ -14,7 +14,7 @@ public class Stagemanager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Transform cameraPostion;
-
+    [SerializeField] private Scene heh;
     [SerializeField] private float spawnStart = 2f;
     [SerializeField] private float spawnInterval = 15f;
     [SerializeField] private int enemiesToSpawn = 5;
@@ -22,6 +22,7 @@ public class Stagemanager : MonoBehaviour
 
     private void Start()
     {
+        
         cameraPostion = GetComponent<Transform>();
         _animator = GetComponent<Animator>();
         _sr = GetComponent<SpriteRenderer>();
@@ -77,7 +78,14 @@ public class Stagemanager : MonoBehaviour
     }
 
     IEnumerator LoadSzop() {
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("ending");
+
+        if (SceneManager.GetActiveScene().name == "jkhxvxvhjkhjh") {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("mineeee");
+        }
+        else {
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene("jkhxvxvhjkhjh");
+        }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5998838465054198921}
   - component: {fileID: 2061575634916434161}
   - component: {fileID: 648547653060547527}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: projectile 2
   m_TagString: Spawner
   m_Icon: {fileID: 0}
@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadaeb1e856f03a418b08900d428ce1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1
-  damage: 3
+  lifetime: 10
+  damage: 1
 --- !u!212 &2061575634916434161
 SpriteRenderer:
   m_ObjectHideFlags: 0

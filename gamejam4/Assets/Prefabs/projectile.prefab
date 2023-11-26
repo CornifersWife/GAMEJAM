@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5998838465054198921}
   - component: {fileID: 2061575634916434161}
   - component: {fileID: 3565182739423724452}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: projectile
   m_TagString: Spawner
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 1
-  damage: 30
+  damage: 3
 --- !u!212 &2061575634916434161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2888934591270648379}
   - component: {fileID: 4064208438253190934}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
