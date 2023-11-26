@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
 
+    
     // buff rate
     private float _buffRate = 1.0f;
 
