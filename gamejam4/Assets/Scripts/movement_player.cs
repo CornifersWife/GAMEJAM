@@ -24,6 +24,16 @@ public class movement_player : MonoBehaviour {
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetKey(KeyCode.H))
+        {
+            animator.SetTrigger("Hit");
+        }
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            animator.SetTrigger("Die");
+        }
     }
 
     private void FixedUpdate() {
