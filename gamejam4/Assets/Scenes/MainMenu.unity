@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2501166791593321961, guid: 42693d7fb7486a64dbf1901e498999ab, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -311.19998
+      value: -311.2
       objectReference: {fileID: 0}
     - target: {fileID: 2501166791593321961, guid: 42693d7fb7486a64dbf1901e498999ab, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -341,10 +341,6 @@ PrefabInstance:
     - target: {fileID: 2501166791593321961, guid: 42693d7fb7486a64dbf1901e498999ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2508316176558045589, guid: 42693d7fb7486a64dbf1901e498999ab, type: 3}
-      propertyPath: m_text
-      value: Monika Salksa
       objectReference: {fileID: 0}
     - target: {fileID: 3993144923625913297, guid: 42693d7fb7486a64dbf1901e498999ab, type: 3}
       propertyPath: m_Name
@@ -1179,7 +1175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5339998459773849346, guid: 5cd7e163a558e2c4892fd3159b79e5bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 220
+      value: 220.00002
       objectReference: {fileID: 0}
     - target: {fileID: 5451849649353394176, guid: 5cd7e163a558e2c4892fd3159b79e5bf, type: 3}
       propertyPath: m_AnchorMax.y
