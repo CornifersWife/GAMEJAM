@@ -7,14 +7,15 @@ public class player_projectile : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float lifetime = 1f;
-    [SerializeField] public float damage = 3f;
+    [SerializeField] public float damage = 30f;
     void Start() {
         StartCoroutine(die());
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "enemy") {
-            SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+        if (other.gameObject.CompareTag("Finish")) {
+            //Debug.Log("1");
+           // SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
         }
     }
 
