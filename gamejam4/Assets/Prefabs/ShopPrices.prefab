@@ -45,15 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buffRate: 1
-  _inflationRate: 1.3
-  _MeleeCost: 1
-  _MidRangeCost: 1
-  _FarRangeCost: 1
-  _HPCost: 1
-  _HPRegenCost: 1
-  _ArmorCost: 1
-  _MovementSpeedCost: 1
-  _DamageCost: 1
-  _AttackSpeedCost: 1
-  _CriticalChanceCost: 1
-  _CriticalMultiplayerCost: 1
+  _inflationRate: 1.81
+  _MeleeCost: 32
+  _MidRangeCost: 24
+  _FarRangeCost: 19
+  _HPCost: 8
+  _HPRegenCost: 14
+  _ArmorCost: 8
+  _MovementSpeedCost: 13
+  _DamageCost: 13
+  _AttackSpeedCost: 10
+  _CriticalChanceCost: 13
+  _CriticalMultiplayerCost: 3

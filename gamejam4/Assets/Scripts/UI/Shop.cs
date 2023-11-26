@@ -65,6 +65,10 @@ public class Shop : MonoBehaviour
     [SerializeField] private TMP_Text _CritChancePricePrompt;
     [SerializeField] private TMP_Text _CritMultipPricePrompt;
 
+    [SerializeField] private TMP_Text _meleePricePrompt;
+    [SerializeField] private TMP_Text _MidRangePricePrompt;
+    [SerializeField] private TMP_Text _FarRangePricePrompt;
+
     [SerializeField] private TMP_Text _slimeCounter;
     private int _slimeCount = 0;
 
@@ -93,6 +97,9 @@ public class Shop : MonoBehaviour
         _AttackSpeedCost = _shopPrices._AttackSpeedCost;
         _CriticalChanceCost = _shopPrices._CriticalChanceCost;
         _CriticalMultiplayerCost = _shopPrices._CriticalMultiplayerCost;
+
+        _inflationRate = _shopPrices._inflationRate;
+        _buffRate = _shopPrices._buffRate;
 
         SetPrices();
 
@@ -140,6 +147,10 @@ public class Shop : MonoBehaviour
         _AttackSpeedPricePrompt.text = _AttackSpeedCost.ToString();
         _CritChancePricePrompt.text = _CriticalChanceCost.ToString();
         _CritMultipPricePrompt.text = _CriticalMultiplayerCost.ToString();
+
+        _meleePricePrompt.text = _MeleeCost.ToString();
+        _MidRangePricePrompt.text = _MidRangeCost.ToString();
+        _FarRangePricePrompt.text = _FarRangeCost.ToString();
 
         _shopPrices._MeleeCost = _MeleeCost;
         _shopPrices._MidRangeCost = _MidRangeCost;
