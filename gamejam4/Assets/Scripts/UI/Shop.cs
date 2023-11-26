@@ -131,8 +131,13 @@ public class Shop : MonoBehaviour
         _Crit_Multip = _modifiersScripts.CriticalMultiplierMod;
         _CritMultipPrompt.text = _Crit_Multip.ToString();
 
+        _meleeWeaponLevel = _modifiersScripts.MeleeWeaponMod;
         _meleePrompt.text = _meleeWeaponLevel.ToString();
+
+        _MidRangeWeaponLevel = _modifiersScripts.MidWeaponMod;
         _MidRangePrompt.text = _MidRangeWeaponLevel.ToString();
+
+        _FarRangeWeaponLevel = _modifiersScripts.FarWeaponMod;
         _FarRangePrompt.text = _FarRangeWeaponLevel.ToString();
 
     }
@@ -300,7 +305,7 @@ public class Shop : MonoBehaviour
         GetCountFromCounter();
         if (_MeleeCost <= _slimeCount)
         {
-            _meleeWeaponLevel += _buffRate;
+            _modifiersScripts.MeleeWeaponMod += _buffRate;
             SetCurrentStats();
             _slimeCount -= _MeleeCost;
             RefreshCounter();
@@ -315,7 +320,7 @@ public class Shop : MonoBehaviour
         GetCountFromCounter();
         if (_MidRangeCost <= _slimeCount)
         {
-            _MidRangeWeaponLevel += _buffRate;
+            _modifiersScripts.MidWeaponMod += _buffRate;
             SetCurrentStats();
             _slimeCount -= _MidRangeCost;
             RefreshCounter();
@@ -330,7 +335,7 @@ public class Shop : MonoBehaviour
         GetCountFromCounter();
         if (_FarRangeCost <= _slimeCount)
         {
-            _FarRangeWeaponLevel += _buffRate;
+            _modifiersScripts.FarWeaponMod += _buffRate;
             SetCurrentStats();
             _slimeCount -= _FarRangeCost;
             RefreshCounter();
