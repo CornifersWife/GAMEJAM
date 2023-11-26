@@ -150,23 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fe94ecedfa0aa499f07c906c7a745a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buffRate: 1
-  _inflationRate: 1
-  _MeleeCost: 1
-  _MidRangeCost: 1
-  _FarRangeCost: 1
-  _HPCost: 1
-  _HPRegenCost: 1
-  _ArmorCost: 1
-  _MovementSpeedCost: 1
-  _DamageCost: 1
-  _AttackSpeedCost: 1
-  _CriticalChanceCost: 1
-  _CriticalMultiplayerCost: 1
   _meleePrompt: {fileID: 5934635820648321676}
   _MidRangePrompt: {fileID: 6921371719731381024}
   _FarRangePrompt: {fileID: 7292489630004502405}
-
   _HPPrompt: {fileID: 5383487038720215724}
   _HPRegenPrompt: {fileID: 446046138824839068}
   _ArmorPrompt: {fileID: 1427317167837358992}
@@ -262,7 +248,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-
 --- !u!1 &162142811745517487
 GameObject:
   m_ObjectHideFlags: 0
