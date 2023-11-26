@@ -9,14 +9,14 @@ public class Stagemanager : MonoBehaviour {
     [SerializeField] private int enemies_to_spawn = 5; 
 
     private void Start() {
-        InvokeRepeating("StartRound", first_wave_time, spawn_interval);
+        InvokeRepeating("StartRound",first_wave_time, spawn_interval);
     }
    
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
             CancelInvoke("StartRound");
             StartRound();
-            InvokeRepeating("StartRound", first_wave_time, spawn_interval);
+            InvokeRepeating("StartRound", 0, spawn_interval);
         }
     }
 
