@@ -251,6 +251,8 @@ MonoBehaviour:
   _currentHealth: 0
   _maxHP: 100
   time_of_death: 0.3
+  contact_damage: 5
+  manager: {fileID: 5281712377071725658, guid: 1f1060285196d6a44b2209c4337c0c39, type: 3}
 --- !u!1001 &8969054233887242487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.205
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

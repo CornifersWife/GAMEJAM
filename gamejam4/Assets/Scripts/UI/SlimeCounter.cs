@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,54 +9,17 @@ public class SlimeCounter : MonoBehaviour
     //player HUD text counter
     [SerializeField] private TMP_Text _slimeCounterText;
 
+    [SerializeField] private slimy_managment manager;
     //current ammount
     private int _slimeCounter = 0;
 
-    private void Awake()
-    {
+    private void Awake() {
+        _slimeCounter = manager.slime;
         RefreshText();
     }
 
-    private void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.Z))
-        {
-            AddSlime(12);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            SetCurrentCount(0);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SetCurrentCount(1345);
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SubtractSlime(12);
-        }*/
-        if(_slimeCounter < 0)
-        {
-            _slimeCounter = 0;
-            RefreshText();
-        }
-    }
-
-    public void SetCurrentCount(int count)// for setting the current ammount collected
-    {
-        _slimeCounter = count;
-        RefreshText();
-    }
-
-    public void AddSlime(int amount)// for adding slime to the counter
-    {
-        _slimeCounter += amount;
-        RefreshText();
-    }
-
-    public void SubtractSlime(int amount)// for subtracting set slime ammount from counter
-    {
-        _slimeCounter -= amount;
+    private void Update() {
+        _slimeCounter = manager.slime;
         RefreshText();
     }
 

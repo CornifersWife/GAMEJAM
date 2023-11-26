@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5998838465054198921}
   - component: {fileID: 2061575634916434161}
   - component: {fileID: 2994848471042800418}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: projectile 3
   m_TagString: Spawner
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 871516088415384023}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.029, y: 0.079, z: 0}
+  m_LocalPosition: {x: -0.029, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,8 +95,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0056739002, y: 0.0060804486}
-  m_Size: {x: 0.24829802, y: 0.3356713}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.8, y: 1}
   m_Direction: 0
 --- !u!114 &5998838465054198921
 MonoBehaviour:
@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadaeb1e856f03a418b08900d428ce1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1
-  damage: 3
+  lifetime: 3
+  damage: 10
 --- !u!212 &2061575634916434161
 SpriteRenderer:
   m_ObjectHideFlags: 0
