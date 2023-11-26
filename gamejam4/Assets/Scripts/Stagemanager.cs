@@ -5,7 +5,7 @@ using TMPro;
 public class Stagemanager : MonoBehaviour
 {
     private bool isEnd = true;
-    [SerializeField] private float startingTime = 10f;
+    [SerializeField] private float RoundTime = 10f;
     private Animator _animator;
     private SpriteRenderer _sr;
     private float timer;
@@ -23,7 +23,7 @@ public class Stagemanager : MonoBehaviour
         cameraPostion = GetComponent<Transform>();
         _animator = GetComponent<Animator>();
         _sr = GetComponent<SpriteRenderer>();
-        timer = startingTime;
+        timer = RoundTime;
         InvokeRepeating("StartRound", spawnStart, spawnInterval);
         
         _sr.enabled = !_sr.enabled;
@@ -64,7 +64,7 @@ public class Stagemanager : MonoBehaviour
     }
 
     private void ResetTimer() {
-        timer = startingTime;
+        timer = RoundTime;
     }
 
     private void StartRound() {
