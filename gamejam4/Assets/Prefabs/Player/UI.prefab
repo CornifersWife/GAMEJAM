@@ -56,7 +56,7 @@ Canvas:
   m_GameObject: {fileID: 15787780277992552}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -151,6 +151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fe94ecedfa0aa499f07c906c7a745a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buffRate: 1
+  _inflationRate: 1
+  _MeleeCost: 1
+  _MidRangeCost: 1
+  _FarRangeCost: 1
+  _HPCost: 1
+  _HPRegenCost: 1
+  _ArmorCost: 1
+  _MovementSpeedCost: 1
+  _DamageCost: 1
+  _AttackSpeedCost: 1
+  _CriticalChanceCost: 1
+  _CriticalMultiplayerCost: 1
   _meleePrompt: {fileID: 5934635820648321676}
   _MidRangePrompt: {fileID: 6921371719731381024}
   _FarRangePrompt: {fileID: 7292489630004502405}
@@ -162,6 +175,7 @@ MonoBehaviour:
   _AttackSpeedPrompt: {fileID: 7283608421549278522}
   _CritChancePrompt: {fileID: 4177434318039471532}
   _CritMultipPrompt: {fileID: 3383859908919112831}
+  _slimeCounter: {fileID: 0}
 --- !u!1 &162142811745517487
 GameObject:
   m_ObjectHideFlags: 0

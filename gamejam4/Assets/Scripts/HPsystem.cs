@@ -31,12 +31,12 @@ public class HPsystem : MonoBehaviour
 
     }
     private void Die() {
-        Destroy(GetComponent<Rigidbody2D>());
+        //Destroy(GetComponent<Rigidbody2D>());
         StartCoroutine(CoroutineDie());
     }
 
     IEnumerator CoroutineDie() {
-        yield return new WaitForSeconds(time_of_death);
-        SceneManager.LoadScene("")
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("ending");
     }
 }
