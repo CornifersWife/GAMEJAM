@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Stagemanager : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class Stagemanager : MonoBehaviour
         if (timer <= 0f) {
             Vector3 topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, 0f));
             _sr.transform.position = new Vector2(topOfScreen.x, topOfScreen.y);
+            StartCoroutine(LoadSzop());
             if (isEnd)
             {
                 _animator.SetTrigger("end");
@@ -71,5 +74,10 @@ public class Stagemanager : MonoBehaviour
         for (int i = 0; i < objectList.Count; i++) {
             objectList[i].BroadcastMessage("Start_spawning", enemiesToSpawn, SendMessageOptions.DontRequireReceiver);
         }
+    }
+
+    IEnumerator LoadSzop() {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("ending");
     }
 }
