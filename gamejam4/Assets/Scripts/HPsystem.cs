@@ -33,10 +33,14 @@ public class HPsystem : MonoBehaviour
 
     public void SetHealth(float damage)
     {
-        Debug.Log("asdd");
+
         _bar.fillAmount -= damage/_maxHP;
     }
 
+    public void TakeDamage(float damage) {
+        Debug.Log(_currentHealth+"  -  "+damage);
+        _currentHealth -= damage;
+    }
     public void ResetHealth()
     {
         _bar.fillAmount = 1f;
