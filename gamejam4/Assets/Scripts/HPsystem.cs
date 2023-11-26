@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HPsystem : MonoBehaviour
@@ -20,9 +21,22 @@ public class HPsystem : MonoBehaviour
     }
 
     public void SetHealth(float damage) {
-        Debug.Log("kupa");
-        _bar.fillAmount -= damage / _maxHP;
+        
         _currentHealth -= damage;
+        
+        _bar.fillAmount = _currentHealth / _maxHP;
+        if (_currentHealth <= 0)
+            Die();
+        
 
+    }
+    private void Die() {
+        //Destroy(GetComponent<Rigidbody2D>());
+        StartCoroutine(CoroutineDie());
+    }
+
+    IEnumerator CoroutineDie() {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("ending");
     }
 }

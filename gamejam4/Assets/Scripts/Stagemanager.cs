@@ -1,18 +1,20 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Stagemanager : MonoBehaviour
 {
     private bool isEnd = true;
-    [SerializeField] private float startingTime = 10f;
+    [SerializeField] private float RoundTime = 10f;
     private Animator _animator;
     private SpriteRenderer _sr;
     private float timer;
     
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Transform cameraPostion;
-
+    [SerializeField] private Scene heh;
     [SerializeField] private float spawnStart = 2f;
     [SerializeField] private float spawnInterval = 15f;
     [SerializeField] private int enemiesToSpawn = 5;
@@ -20,10 +22,11 @@ public class Stagemanager : MonoBehaviour
 
     private void Start()
     {
+        
         cameraPostion = GetComponent<Transform>();
         _animator = GetComponent<Animator>();
         _sr = GetComponent<SpriteRenderer>();
-        timer = startingTime;
+        timer = RoundTime;
         InvokeRepeating("StartRound", spawnStart, spawnInterval);
         
         _sr.enabled = !_sr.enabled;
@@ -36,6 +39,7 @@ public class Stagemanager : MonoBehaviour
         if (timer <= 0f) {
             Vector3 topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, 0f));
             _sr.transform.position = new Vector2(topOfScreen.x, topOfScreen.y);
+            StartCoroutine(LoadSzop());
             if (isEnd)
             {
                 _animator.SetTrigger("end");
@@ -64,12 +68,24 @@ public class Stagemanager : MonoBehaviour
     }
 
     private void ResetTimer() {
-        timer = startingTime;
+        timer = RoundTime;
     }
 
     private void StartRound() {
         for (int i = 0; i < objectList.Count; i++) {
             objectList[i].BroadcastMessage("Start_spawning", enemiesToSpawn, SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+    IEnumerator LoadSzop() {
+
+        if (SceneManager.GetActiveScene().name == "jkhxvxvhjkhjh") {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("mineeee");
+        }
+        else {
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene("jkhxvxvhjkhjh");
         }
     }
 }
