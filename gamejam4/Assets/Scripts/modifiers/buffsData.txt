@@ -1,0 +1,1 @@
+{"id":2,"name":"attack speed boost","timeDuration":10.0,"speedMovementMod":1.0,"speedAttackMod":1.2000000476837159,"damageMod":1.0,"HPMod":1.0,"armorMod":1.0,"dodgeMod":1.0}
