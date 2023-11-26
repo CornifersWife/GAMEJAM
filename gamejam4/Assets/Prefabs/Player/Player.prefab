@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2870099828145021752}
   - component: {fileID: 5309645576916385350}
   - component: {fileID: 1644298962760619337}
+  - component: {fileID: 815046442840736923}
   m_Layer: 0
   m_Name: Player_movement
   m_TagString: Player
@@ -278,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 10
+  animator: {fileID: 0}
 --- !u!95 &1644298962760619337
 Animator:
   serializedVersion: 5
@@ -299,6 +301,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &815046442840736923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809761989322014870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d516a661157644bbb620590a282024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackdelay: 1
+  projectile: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &8508294091944367831
 GameObject:
   m_ObjectHideFlags: 0
