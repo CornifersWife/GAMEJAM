@@ -9,7 +9,7 @@ public class SlimeCounter : MonoBehaviour
     [SerializeField] private TMP_Text _slimeCounterText;
 
     //current ammount
-    private int _slimeCounter = 0;
+    private int _slimeCounter = 3232;
 
     private void Awake()
     {
