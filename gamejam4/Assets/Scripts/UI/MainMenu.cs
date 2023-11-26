@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _mainView;
-    [SerializeField] private GameObject _settingsView;
+    [SerializeField] private GameObject _creditsView;
+    [SerializeField] private GameObject _instructionsView;
     [SerializeField] private GameObject _levelSelectionView;
 
     private void Awake()
     {
         _mainView.SetActive(true);
-        _settingsView.SetActive(false);
+        _creditsView.SetActive(false);
+        _instructionsView.SetActive(false);
         _levelSelectionView.SetActive(false);
     }
 
@@ -20,7 +22,8 @@ public class MainMenu : MonoBehaviour
     {
         _mainView.SetActive(false);
         _levelSelectionView.SetActive(true);
-        _settingsView.SetActive(false);
+        _creditsView.SetActive(false);
+        _instructionsView.SetActive(false);
     }
 
     public void LevelSelect(int levelID)
@@ -32,14 +35,24 @@ public class MainMenu : MonoBehaviour
     {
         _mainView.SetActive(true);
         _levelSelectionView.SetActive(false);
-        _settingsView.SetActive(false);
+        _creditsView.SetActive(false);
+        _instructionsView.SetActive(false);
     }
 
-    public void OpenSettings()
+    public void OpenCredits()
     {
         _mainView.SetActive(false);
         _levelSelectionView.SetActive(false);
-        _settingsView.SetActive(true);
+        _creditsView.SetActive(true);
+        _instructionsView.SetActive(false);
+    }
+    
+    public void OpenInstructions()
+    {
+        _mainView.SetActive(false);
+        _levelSelectionView.SetActive(false);
+        _creditsView.SetActive(false);
+        _instructionsView.SetActive(true);
     }
 
     public void QuitGame()
