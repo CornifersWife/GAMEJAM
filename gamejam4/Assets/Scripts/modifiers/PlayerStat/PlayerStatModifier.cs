@@ -28,6 +28,9 @@ public class PlayerStatModifier : MonoBehaviour
     [SerializeField] internal float HPMod;
     [SerializeField] internal float armorMod;
     [SerializeField] internal float dodgeMod;
+    [SerializeField] internal float HPRegenMod;
+    [SerializeField] internal float CriticalChanceMod;
+    [SerializeField] internal float CriticalMultiplierMod;
 
     [SerializeField] private PlayerStatModifierManager modifierManager;
     
