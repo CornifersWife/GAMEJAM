@@ -19,9 +19,9 @@ public enum Cooldown
 
 public enum Range
 {
-    Small = 10,
-    Medium = 40,
-    Big = 70
+    Small = 2,
+    Medium = 3,
+    Big = 4
 }
 
 public enum Damage
