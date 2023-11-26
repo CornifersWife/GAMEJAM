@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HPsystem : MonoBehaviour
 {
     //stats
-    private float _currentHealth;
+    [SerializeField] private float _currentHealth;
     [SerializeField] private float _maxHP = 100f;
 
     //Game objects
@@ -18,7 +18,7 @@ public class HPsystem : MonoBehaviour
         _bar.fillAmount = 1f;
         _currentHealth = _maxHP;
     }
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -33,14 +33,10 @@ public class HPsystem : MonoBehaviour
 
     public void SetHealth(float damage)
     {
-
         _bar.fillAmount -= damage/_maxHP;
     }
 
-    public void TakeDamage(float damage) {
-        Debug.Log(_currentHealth+"  -  "+damage);
-        _currentHealth -= damage;
-    }
+   
     public void ResetHealth()
     {
         _bar.fillAmount = 1f;

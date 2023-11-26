@@ -14,13 +14,13 @@ GameObject:
   - component: {fileID: 2854543576873970157}
   - component: {fileID: 1216026651959797467}
   - component: {fileID: 7473458921319502881}
-  - component: {fileID: 2919657197958003936}
   - component: {fileID: 1921969392016419599}
   - component: {fileID: 7328479145690223974}
   - component: {fileID: 7402686848624762894}
+  - component: {fileID: 1982444873817149832}
   m_Layer: 0
   m_Name: distanceEnemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,20 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13a394d3f239e6419c54187507bd478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2919657197958003936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4134937536750302098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67195d09c1ad0ed428e3056df5b41a44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHP: 100
-  _bar: {fileID: 8177347755877228231}
 --- !u!95 &1921969392016419599
 Animator:
   serializedVersion: 5
@@ -250,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ad1b1ae30cf15489a21dda077261d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 1
   cooldown: 2
   damage: 22.02
   _projectilePrefab: {fileID: 2242159022441772180, guid: e4ae8dda199bebd4b9359d2c664ba48b, type: 3}
@@ -267,6 +253,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252b72a7659ef3c4696c90fe8370aa28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1982444873817149832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134937536750302098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f17811e65ccf5e45ad561b4a0983098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 0
+  _maxHP: 100
+  time_of_death: 0.3
 --- !u!1 &4580293805219955301
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,14 +413,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5114377031578502054, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
   m_PrefabInstance: {fileID: 8969054233887242487}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8177347755877228231 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 937801210133063216, guid: f7a9698f2bb91c045a51209685763eac, type: 3}
-  m_PrefabInstance: {fileID: 8969054233887242487}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
