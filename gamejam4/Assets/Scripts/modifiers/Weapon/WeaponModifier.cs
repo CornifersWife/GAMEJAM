@@ -6,6 +6,8 @@ using UnityEngine;
 [Serializable]
 public class WeaponModifierData
 {
+    public int id;
+    public string name;
     public float speedMod;
     public float cooldownMod;
     public float rangeMod;
@@ -14,6 +16,8 @@ public class WeaponModifierData
 
 public class WeaponModifier : MonoBehaviour
 {
+    [SerializeField] internal int id;
+    [SerializeField] internal string name;
     [SerializeField] internal float speedMod;
     [SerializeField] internal float cooldownMod;
     [SerializeField] internal float rangeMod;
