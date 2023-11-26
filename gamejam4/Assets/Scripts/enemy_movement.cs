@@ -20,12 +20,10 @@ public class Chaser : MonoBehaviour {
 
     void Update() {
         if (target != null) {
-            // Calculate the direction to move towards the target
             if ((target.transform.position - transform.position).magnitude > distance_from_player) {
                 Vector2 direction = (target.transform.position - transform.position).normalized;
                 _rb.velocity = direction * moveSpeed;
             }
-            //_rb.transform.Translate(e);
         }
     }
 }

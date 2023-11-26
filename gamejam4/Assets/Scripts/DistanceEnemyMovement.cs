@@ -5,7 +5,9 @@ using UnityEngine.UIElements;
 
 public class DistanceEnemyMovement : MonoBehaviour
 {
+
     private Transform target;  // The target object to chase
+
     [SerializeField] private float moveSpeed = 5f;  // The speed at which the object will move
     [SerializeField] private float cooldown = 8f;
     [SerializeField] private float damage = 10;
@@ -42,6 +44,7 @@ public class DistanceEnemyMovement : MonoBehaviour
             _trash = new GameObject("Trash");
             Instantiate(_trash);
         }
+
     }
 
     void Update()
@@ -52,11 +55,13 @@ public class DistanceEnemyMovement : MonoBehaviour
         {
             if (!_inRange)
             {
+
                 _enemyAnimations.Walk();
                 // Calculate the direction to move towards the target
                 Vector2 direction = (target.position - transform.position).normalized;
+
                 _rb.velocity = direction * moveSpeed;
-                //_rb.transform.Translate(e);
+
             }
             else
             {
