@@ -18,32 +18,11 @@ public class HPsystem : MonoBehaviour
         _bar.fillAmount = 1f;
         _currentHealth = _maxHP;
     }
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SetHealth(10f);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetHealth();
-        }
-    }
 
-    public void SetHealth(float damage)
-    {
-        _bar.fillAmount -= damage/_maxHP;
-    }
+    public void SetHealth(float damage) {
+        Debug.Log("kupa");
+        _bar.fillAmount -= damage / _maxHP;
+        _currentHealth -= damage;
 
-   
-    public void ResetHealth()
-    {
-        _bar.fillAmount = 1f;
-    }
-
-    public float GetHealth()
-    {
-        return _currentHealth;
     }
 }

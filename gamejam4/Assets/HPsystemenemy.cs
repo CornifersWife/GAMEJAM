@@ -9,7 +9,7 @@ public class HPsystemenemy : MonoBehaviour {
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _maxHP = 100f;
     [SerializeField] private float time_of_death = 0.3f;
-
+    [SerializeField] private float contact_damage = 5f;
 
     private void Awake() {
         _currentHealth = _maxHP;
@@ -22,6 +22,11 @@ public class HPsystemenemy : MonoBehaviour {
             if (_currentHealth <= 0)
                 Die();
         }
+
+        if (other.gameObject.CompareTag("Player"))
+            _currentHealth -= contact_damage;
+            if (_currentHealth <= 0)
+                Die();
     }
 
     private void Die() {
