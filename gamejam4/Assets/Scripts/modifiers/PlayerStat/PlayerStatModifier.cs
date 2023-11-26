@@ -32,6 +32,10 @@ public class PlayerStatModifier : MonoBehaviour
     [SerializeField] internal float CriticalChanceMod;
     [SerializeField] internal float CriticalMultiplierMod;
 
+    [SerializeField] internal float MeleeWeaponMod;
+    [SerializeField] internal float MidWeaponMod;
+    [SerializeField] internal float FarWeaponMod;
+
     [SerializeField] private PlayerStatModifierManager modifierManager;
     
     // Start is called before the first frame update

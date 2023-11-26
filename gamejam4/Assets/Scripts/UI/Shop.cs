@@ -6,25 +6,26 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+
     // buff rate
-    [SerializeField] private float _buffRate = 1.0f;
+    private float _buffRate = 1.0f;
 
     // cost multiplier
-    [SerializeField] private float _inflationRate = 1f;
+    private float _inflationRate = 1f;
 
     // Costs
-    [SerializeField] private int _MeleeCost = 1;
-    [SerializeField] private int _MidRangeCost = 1;
-    [SerializeField] private int _FarRangeCost = 1;
+    private int _MeleeCost = 1;
+    private int _MidRangeCost = 1;
+    private int _FarRangeCost = 1;
 
-    [SerializeField] private int _HPCost = 1;
-    [SerializeField] private int _HPRegenCost = 1;
-    [SerializeField] private int _ArmorCost = 1;
-    [SerializeField] private int _MovementSpeedCost = 1;
-    [SerializeField] private int _DamageCost = 1;
-    [SerializeField] private int _AttackSpeedCost = 1;
-    [SerializeField] private int _CriticalChanceCost = 1;
-    [SerializeField] private int _CriticalMultiplayerCost = 1;
+    private int _HPCost = 1;
+    private int _HPRegenCost = 1;
+    private int _ArmorCost = 1;
+    private int _MovementSpeedCost = 1;
+    private int _DamageCost = 1;
+    private int _AttackSpeedCost = 1;
+    private int _CriticalChanceCost = 1;
+    private int _CriticalMultiplayerCost = 1;
 
     // weapons levels
     private float _meleeWeaponLevel = 1f;
@@ -55,17 +56,53 @@ public class Shop : MonoBehaviour
     [SerializeField] private TMP_Text _CritChancePrompt;
     [SerializeField] private TMP_Text _CritMultipPrompt;
 
+    [SerializeField] private TMP_Text _HPPricePrompt;
+    [SerializeField] private TMP_Text _HPRegenPricePrompt;
+    [SerializeField] private TMP_Text _ArmorPricePrompt;
+    [SerializeField] private TMP_Text _MovementSpeedPricePrompt;
+    [SerializeField] private TMP_Text _DMGPricePrompt;
+    [SerializeField] private TMP_Text _AttackSpeedPricePrompt;
+    [SerializeField] private TMP_Text _CritChancePricePrompt;
+    [SerializeField] private TMP_Text _CritMultipPricePrompt;
+
+    [SerializeField] private TMP_Text _meleePricePrompt;
+    [SerializeField] private TMP_Text _MidRangePricePrompt;
+    [SerializeField] private TMP_Text _FarRangePricePrompt;
+
     [SerializeField] private TMP_Text _slimeCounter;
     private int _slimeCount = 0;
+
+    private ShopPricesModifier _shopPrices;
 
     // Modifiers
     private PlayerStatModifier _modifiersScripts;
 
-    private void Awake()
+    private void Start()
     {
         var temp = GameObject.Find("Modifier");
         _modifiersScripts = temp.GetComponent<PlayerStatModifier>();
         SetCurrentStats();
+
+        _shopPrices = GameObject.Find("ShopPrices").GetComponent<ShopPricesModifier>();
+
+        _MeleeCost = _shopPrices._MeleeCost;
+        _MidRangeCost = _shopPrices._MidRangeCost;
+        _FarRangeCost = _shopPrices._FarRangeCost;
+
+        _HPCost = _shopPrices._HPCost;
+        _HPRegenCost = _shopPrices._HPRegenCost;
+        _ArmorCost = _shopPrices._ArmorCost;
+        _MovementSpeedCost = _shopPrices._MovementSpeedCost;
+        _DamageCost = _shopPrices._DamageCost;
+        _AttackSpeedCost = _shopPrices._AttackSpeedCost;
+        _CriticalChanceCost = _shopPrices._CriticalChanceCost;
+        _CriticalMultiplayerCost = _shopPrices._CriticalMultiplayerCost;
+
+        _inflationRate = _shopPrices._inflationRate;
+        _buffRate = _shopPrices._buffRate;
+
+        SetPrices();
+
     }
 
     void SetCurrentStats()
@@ -94,26 +131,44 @@ public class Shop : MonoBehaviour
         _Crit_Multip = _modifiersScripts.CriticalMultiplierMod;
         _CritMultipPrompt.text = _Crit_Multip.ToString();
 
+        _meleeWeaponLevel = _modifiersScripts.MeleeWeaponMod;
         _meleePrompt.text = _meleeWeaponLevel.ToString();
+
+        _MidRangeWeaponLevel = _modifiersScripts.MidWeaponMod;
         _MidRangePrompt.text = _MidRangeWeaponLevel.ToString();
+
+        _FarRangeWeaponLevel = _modifiersScripts.FarWeaponMod;
         _FarRangePrompt.text = _FarRangeWeaponLevel.ToString();
 
     }
 
-    private void AddInflation()
+    private void SetPrices()
     {
-        _MeleeCost = (int)((float)_MeleeCost * _inflationRate);
-        _MidRangeCost = (int)((float)_MidRangeCost * _inflationRate); ;
-        _FarRangeCost = (int)((float)_FarRangeCost * _inflationRate); ;
+        _HPPricePrompt.text = _HPCost.ToString();
+        _HPRegenPricePrompt.text = _HPRegenCost.ToString();
+        _ArmorPricePrompt.text = _ArmorCost.ToString();
+        _MovementSpeedPricePrompt.text = _MovementSpeedCost.ToString();
+        _DMGPricePrompt.text = _DamageCost.ToString();
+        _AttackSpeedPricePrompt.text = _AttackSpeedCost.ToString();
+        _CritChancePricePrompt.text = _CriticalChanceCost.ToString();
+        _CritMultipPricePrompt.text = _CriticalMultiplayerCost.ToString();
 
-        _HPCost = (int)((float)_HPCost * _inflationRate); ;
-        _HPRegenCost = (int)((float)_HPRegenCost * _inflationRate); ;
-        _ArmorCost = (int)((float)_ArmorCost * _inflationRate); ;
-        _MovementSpeedCost = (int)((float)_MovementSpeedCost * _inflationRate); ;
-        _DamageCost = (int)((float)_DamageCost * _inflationRate); ;
-        _AttackSpeedCost = (int)((float)_AttackSpeedCost * _inflationRate); ;
-        _CriticalChanceCost = (int)((float)_CriticalChanceCost * _inflationRate); ;
-        _CriticalMultiplayerCost = (int)((float)_CriticalMultiplayerCost * _inflationRate); ;
+        _meleePricePrompt.text = _MeleeCost.ToString();
+        _MidRangePricePrompt.text = _MidRangeCost.ToString();
+        _FarRangePricePrompt.text = _FarRangeCost.ToString();
+
+        _shopPrices._MeleeCost = _MeleeCost;
+        _shopPrices._MidRangeCost = _MidRangeCost;
+        _shopPrices._FarRangeCost = _FarRangeCost;
+
+        _shopPrices._HPCost = _HPCost ;
+        _shopPrices._HPRegenCost = _HPRegenCost;
+        _shopPrices._ArmorCost = _ArmorCost;
+        _shopPrices._MovementSpeedCost = _MovementSpeedCost;
+        _shopPrices._DamageCost = _DamageCost;
+        _shopPrices._AttackSpeedCost = _AttackSpeedCost;
+        _shopPrices._CriticalChanceCost = _CriticalChanceCost;
+        _shopPrices._CriticalMultiplayerCost = _CriticalMultiplayerCost;
     }
 
     private void GetCountFromCounter()
@@ -134,7 +189,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _HPCost;
             RefreshCounter();
-            AddInflation();
+            _HPCost = (int)((float)_HPCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -148,7 +204,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _HPRegenCost;
             RefreshCounter();
-            AddInflation();
+            _HPRegenCost = (int)((float)_HPRegenCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -162,7 +219,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _ArmorCost;
             RefreshCounter();
-            AddInflation();
+            _ArmorCost = (int)((float)_ArmorCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -176,7 +234,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _MovementSpeedCost;
             RefreshCounter();
-            AddInflation();
+            _MovementSpeedCost = (int)((float)_MovementSpeedCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -190,7 +249,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _DamageCost;
             RefreshCounter();
-            AddInflation();
+            _DamageCost = (int)((float)_DamageCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -204,7 +264,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _AttackSpeedCost;
             RefreshCounter();
-            AddInflation();
+            _AttackSpeedCost = (int)((float)_AttackSpeedCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -218,7 +279,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _CriticalChanceCost;
             RefreshCounter();
-            AddInflation();
+            _CriticalChanceCost = (int)((float)_CriticalChanceCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -232,7 +294,8 @@ public class Shop : MonoBehaviour
             SetCurrentStats();
             _slimeCount -= _CriticalMultiplayerCost;
             RefreshCounter();
-            AddInflation();
+            _CriticalMultiplayerCost = (int)((float)_CriticalMultiplayerCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -242,11 +305,12 @@ public class Shop : MonoBehaviour
         GetCountFromCounter();
         if (_MeleeCost <= _slimeCount)
         {
-            _meleeWeaponLevel += _buffRate;
+            _modifiersScripts.MeleeWeaponMod += _buffRate;
             SetCurrentStats();
             _slimeCount -= _MeleeCost;
             RefreshCounter();
-            AddInflation();
+            _MeleeCost = (int)((float)_MeleeCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -256,11 +320,12 @@ public class Shop : MonoBehaviour
         GetCountFromCounter();
         if (_MidRangeCost <= _slimeCount)
         {
-            _MidRangeWeaponLevel += _buffRate;
+            _modifiersScripts.MidWeaponMod += _buffRate;
             SetCurrentStats();
             _slimeCount -= _MidRangeCost;
             RefreshCounter();
-            AddInflation();
+            _MidRangeCost = (int)((float)_MidRangeCost * _inflationRate);
+            SetPrices();
         }
         
     }
@@ -270,11 +335,12 @@ public class Shop : MonoBehaviour
         GetCountFromCounter();
         if (_FarRangeCost <= _slimeCount)
         {
-            _FarRangeWeaponLevel += _buffRate;
+            _modifiersScripts.FarWeaponMod += _buffRate;
             SetCurrentStats();
             _slimeCount -= _FarRangeCost;
             RefreshCounter();
-            AddInflation();
+            _FarRangeCost = (int)((float)_FarRangeCost * _inflationRate);
+            SetPrices();
         }
         
     }
